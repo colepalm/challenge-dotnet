@@ -62,7 +62,7 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="SampleDataController.cs" pinned="false" current-in-tab="true">
+          <file leaf-file-name="SampleDataController.cs" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Controllers/SampleDataController.cs">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="124">
@@ -74,6 +74,16 @@
                     <marker date="1501189320000" expanded="true" signature="292:572" ph="{...}" />
                     <marker date="1501189320000" expanded="true" signature="602:780" ph="{...}" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/.gitignore">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="442">
+                  <caret line="238" column="6" lean-forward="false" selection-start-line="238" selection-start-column="6" selection-end-line="238" selection-end-column="6" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -123,7 +133,6 @@
         <option value="$PROJECT_DIR$/challenge-dotnet/Controllers/HomeController.cs" />
         <option value="$PROJECT_DIR$/challenge-dotnet/Views/Home/Index.cshtml" />
         <option value="$PROJECT_DIR$/Views/Home/Index.cshtml" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/feesData.json" />
         <option value="$PROJECT_DIR$/Controllers/Api.cs" />
         <option value="$PROJECT_DIR$/ClientApp/dist/main-server.js" />
@@ -132,6 +141,7 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/ClientApp/app/components/home/home.component.ts" />
         <option value="$PROJECT_DIR$/Controllers/SampleDataController.cs" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -454,12 +464,12 @@
       <workItem from="1501105102652" duration="2507000" />
       <workItem from="1501109789312" duration="5983000" />
       <workItem from="1501120465556" duration="2892000" />
-      <workItem from="1501125005734" duration="11861000" />
+      <workItem from="1501125005734" duration="11939000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23243000" />
+    <option name="totallyTimeSpent" value="23321000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -628,13 +638,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="554">
-          <caret line="240" column="0" lean-forward="false" selection-start-line="240" selection-start-column="0" selection-end-line="240" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Controllers/Api.cs" />
     <entry file="file://$PROJECT_DIR$/feesData.json" />
     <entry file="file://$PROJECT_DIR$/ClientApp/app/components/home/home.component.js" />
@@ -788,6 +791,14 @@
             <marker date="1501189320000" expanded="true" signature="292:572" ph="{...}" />
             <marker date="1501189320000" expanded="true" signature="602:780" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="238" column="6" lean-forward="false" selection-start-line="238" selection-start-column="6" selection-end-line="238" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>
