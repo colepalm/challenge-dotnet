@@ -1,4 +1,4 @@
-#Getting Started
+# Getting Started
 
 1. `git clone https://github.com/colepalm/challenge-dotnet.git prj`
 2. `cd prj`
