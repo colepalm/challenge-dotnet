@@ -90,9 +90,35 @@ namespace challenge_dotnet.Controllers
                 
                 responses.Add(toAdd);
             }
+            
+            responses = addTotals(responses);
 
             return responses;
 
+        }
+
+        public List<Response> addTotals(List<Response> responses)
+        {
+            Dictionary<string, float> totals = new Dictionary<string, float>();
+            
+            foreach (var res in responses)
+            {
+                foreach (var dist in res.distributions)
+                {
+                    if (!totals.ContainsKey(dist.name))
+                        totals.Add(dist.name, dist.amount);
+
+                    else
+                        totals[dist.name] += dist.amount;
+                }
+            }
+            
+            Response totalObj = new Response();
+            totalObj.totals = totals;
+            
+            responses.Add(totalObj);
+            
+            return responses;
         }
         
         public FinalizedOrder processPayment(Fee[] feeData, OrderItem orderItem)
@@ -111,7 +137,7 @@ namespace challenge_dotnet.Controllers
 
             if (pages > 0)
             {
-                total += (float)pages * (float)per;
+                total += pages * per;
             }
             
             FinalizedOrder toReturn = new FinalizedOrder();
@@ -210,6 +236,7 @@ namespace challenge_dotnet.Controllers
             public string type { get; set; }
             public string date { get; set; }
             public List<Distribution> distributions { get; set; }
+            public Dictionary<string, float> totals { get; set; }
         }
         
     }

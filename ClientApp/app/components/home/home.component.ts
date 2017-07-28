@@ -82,11 +82,24 @@ export class HomeComponent implements IHomeComponent {
         console.log('Part 2: Distributions\n\n');
 
         orderData.forEach(function (order) {
-            console.log('Order ID: ' + order.orderNumber);
+            if (order.date !== null) {
+                console.log('Order ID: ' + order.orderNumber);
 
-            order.distributions.forEach(function (dist) {
-                console.log('\tFund - ' + dist.name + ': $' + dist.amount);
-            })
+                order.distributions.forEach(function (dist) {
+                    console.log('\tFund - ' + dist.name + ': $' + dist.amount);
+                })
+            }
         });
+        
+        console.log('Total distributions:');
+        
+        orderData.forEach(function (order) {
+            if (order.totals !== null) {
+                
+                for (let key in order.totals) {
+                    console.log('\tFund - ' + key + ': $' + order.totals[key]);
+                }
+            }
+        })
     }
 }
