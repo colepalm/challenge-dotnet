@@ -1,61 +1,9 @@
 using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json.Linq;
 
 namespace challenge_dotnet.Controllers
 {
-    public class OrderData
-    {
-        public string order_date { get; set; }
-        public OrderItem[] order_items { get; set; }
-        public string order_number { get; set; }
-    }
-
-    public class FeeData
-    {
-        public string Order_Item_Type { get; set; }
-        public Fee[] Fees { get; set; }
-        public Distribution[] Distributions { get; set; }
-            
-    }
-
-    public class OrderItem
-    {
-        public int order_item_id { get; set; }
-        public string type { get; set; }
-        public int pages { get; set; }
-    }
-
-    public class FinalizedOrder
-    {
-        public int id { get; set; }
-        public string type { get; set; }
-        public float amount { get; set; }
-    }
-
-    public class Fee
-    {
-        public string name { get; set; }
-        public float amount { get; set; }
-        public string type { get; set; }
-    }
-
-    public class Distribution
-    {
-        public string name { get; set; }
-        public string amount { get; set; }
-    }
-
-    public class Response
-    {
-        public int total { get; set; }
-        public string id { get; set; }
-        public string date { get; set; }
-        public List<FinalizedOrder> orderItems { get; set; }
-    }
-
     [Route("api/[controller]")]
     public class PriceController : Controller
     {
@@ -63,8 +11,7 @@ namespace challenge_dotnet.Controllers
         
         public PriceController()
         {
-            Fees = LoadJson();
-            
+            Fees = LoadJson();   
         }
         
         [HttpPost]
@@ -151,6 +98,56 @@ namespace challenge_dotnet.Controllers
             }
 
             return null;
+        }
+        
+        public class OrderData
+        {
+            public string order_date { get; set; }
+            public OrderItem[] order_items { get; set; }
+            public string order_number { get; set; }
+        }
+
+        public class FeeData
+        {
+            public string Order_Item_Type { get; set; }
+            public Fee[] Fees { get; set; }
+            public Distribution[] Distributions { get; set; }
+            
+        }
+
+        public class OrderItem
+        {
+            public int order_item_id { get; set; }
+            public string type { get; set; }
+            public int pages { get; set; }
+        }
+
+        public class FinalizedOrder
+        {
+            public int id { get; set; }
+            public string type { get; set; }
+            public float amount { get; set; }
+        }
+
+        public class Fee
+        {
+            public string name { get; set; }
+            public float amount { get; set; }
+            public string type { get; set; }
+        }
+
+        public class Distribution
+        {
+            public string name { get; set; }
+            public string amount { get; set; }
+        }
+
+        public class Response
+        {
+            public int total { get; set; }
+            public string id { get; set; }
+            public string date { get; set; }
+            public List<FinalizedOrder> orderItems { get; set; }
         }
     }
 }

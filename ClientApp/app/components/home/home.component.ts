@@ -32,27 +32,33 @@ export class HomeComponent implements IHomeComponent {
             let headers = new Headers();
             headers.append('Content-Type', 'application/json');
 
-            //Part 1:
             let toSend = JSON.parse(data._body);
-            
+
+            //Part 1:            
             const dataReq = ctrl.http.post(ctrl.originUrl + '/api/Price', toSend, {headers: headers});
             
             dataReq.subscribe(function(response: any) {
                     console.log('Part 1 JSON Response:');
                     let responseJson = JSON.parse(response._body);
+                    
                     console.log(responseJson);
+                    
                     console.log('\n\n');
                     ctrl.feesChallenge(responseJson);
                 });
 
-            // //Part 2:
-            // http.post('/api/distributions', data)
-            //     .subscribe(function(response) {
-            //     console.log('Part 2 JSON Response:');
-            //     console.log(response);
-            //     console.log('\n\n');
-            //     this.distributionChallenge(response);
-            // });
+            //Part 2:
+            const distReq = ctrl.http.post(ctrl.originUrl + '/api/Dist', toSend, {headers: headers});            
+            
+            distReq.subscribe(function(response: any) {
+                console.log('Part 2 JSON Response:');
+                
+                let responseJson = JSON.parse(response._body);
+                
+                console.log(responseJson);
+                console.log('\n\n');
+                ctrl.distributionChallenge(responseJson);
+            });
         });
     }
 
@@ -72,7 +78,15 @@ export class HomeComponent implements IHomeComponent {
         });
     }
 
-    private distributionChallenge(response) {
+    private distributionChallenge(orderData) {
+        console.log('Part 2: Distributions\n\n');
 
+        orderData.forEach(function (order) {
+            console.log('Order ID: ' + order.orderNumber);
+
+            order.distributions.forEach(function (dist) {
+                console.log('\tFund - ' + dist.name + ': $' + dist.amount);
+            })
+        });
     }
 }
